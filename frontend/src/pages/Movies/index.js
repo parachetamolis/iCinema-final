@@ -41,7 +41,7 @@ class Movies extends Component {
       rating,
     } = this.state;
 
-    const { movies, genres, loggedIn } = this.props;
+    const { movies, genres } = this.props;
 
     if (_.isEmpty(movies)) {
       return (
@@ -81,8 +81,6 @@ class Movies extends Component {
                 type="number"
                 iconClass="fas fa-star"
               />
-              {/* { loggedIn && <Link to='/movies/new' className='btn btn-primary btn-block my-2 text-white'> Add Movie </Link> } */}
-              {/* <Rating total={5} filled={rating} onChange={val => this.handleChange('rating', val)}/> */}
             </div>
 
             <div className="col-lg-10 col-sm-12">

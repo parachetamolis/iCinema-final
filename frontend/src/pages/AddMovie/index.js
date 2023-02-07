@@ -28,7 +28,6 @@ class AddMovieForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    //TODO: Validate property
     const { error } = Joi.validate(this.state, movieSchema);
     this.setState({ errors: error });
     if (!error) this.props.addMovie(this.state.data);

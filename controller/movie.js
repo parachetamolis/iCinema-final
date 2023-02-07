@@ -35,31 +35,27 @@ exports.addMovie = (req, res) => {
   });
 };
 
-const saveMovie = (req, res) => {
-  fs.readFile(req.file.path, function (err, data) {
-    if (err) {
-      throw err;
-    } else {
-      const contentType = req.file.mimetype;
-      const newMovie = new Movie({
-        _id: mongoose.Types.ObjectId(),
-        title: req.body.title,
-        numberInStock: req.body.numberInStock,
-        genre: req.body.genre,
-        image: { data, contentType },
-        rate: 0,
-      });
+const saveMovie = async (req, res) => {
+  const { title, numberInStock, genre } = req.body;
+  const contentType = req.file.mimetype;
+  const data = await fs.promises.readFile(req.file.path);
+  const newMovie = new Movie({
+    _id: mongoose.Types.ObjectId(),
+    title,
+    numberInStock,
+    genre,
+    image: { data, contentType },
+    rate: 0,
+  });
 
-      //Saving new movie in db
-      newMovie.save((err, movie) => {
-        if (err) {
-          res.status(500).json({ error: err });
-        } else {
-          res.status(201).json({
-            message: "A new movie added.",
-            movie: movie,
-          });
-        }
+  //Saving new movie in db
+  newMovie.save((err, movie) => {
+    if (err) {
+      res.status(500).json({ error: err });
+    } else {
+      res.status(201).json({
+        message: "A new movie added.",
+        movie: movie,
       });
     }
   });

@@ -1,6 +1,6 @@
 import rootReducer from "./reducers/rootReducer";
 import thunk from "redux-thunk";
-import { createStore, applyMiddleware, compose } from "redux";
+import { legacy_createStore as createStore, applyMiddleware, compose } from "redux";
 
 const middleWare = [thunk];
 const initialState = {};

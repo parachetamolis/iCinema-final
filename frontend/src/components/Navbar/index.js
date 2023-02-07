@@ -26,6 +26,12 @@ function Navbar(props) {
     });
   }
 
+  function logOut() {
+    toggleNav();
+    props.signOut();
+  }
+
+
   return (
     <nav className="nav-wrapper">
       <div id="burger" class="ico-btn" onClick={toggleNav}>
@@ -51,12 +57,7 @@ function Navbar(props) {
             </>
           ) : (
             <Link
-              onClick={() => {
-                toggleNav();
-                props.signOut();
-              }}
-              to="/#"
-            >
+              onClick={logOut} to="/#">
               Log out
             </Link>
           )}

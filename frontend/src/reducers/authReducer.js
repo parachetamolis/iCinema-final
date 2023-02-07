@@ -1,9 +1,7 @@
 import {
-  LOGIN_SUCCESS,
-  LOGIN_ERROR,
+  AUTH_SUCCESS,
+  AUTH_ERROR,
   SIGNOUT,
-  SIGNUP_ERROR,
-  SIGNUP_SUCCESS,
 } from "../actions/actionTypes";
 
 const initState = {
@@ -14,32 +12,18 @@ const initState = {
 
 export default function (state = initState, action) {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case AUTH_SUCCESS:
       return {
         ...state,
         loggedIn: true,
         userData: action.payload.data.userData,
         authMessage: action.payload.data.message,
       };
-    case LOGIN_ERROR:
+    case AUTH_ERROR:
       return {
         ...state,
         authMessage: action.error.response.data.error,
       };
-    case SIGNUP_SUCCESS:
-      return {
-        ...state,
-        loggedIn: true,
-        userData: action.payload.data.userData,
-        authMessage: action.payload.data.message,
-      };
-
-    case SIGNUP_ERROR:
-      return {
-        ...state,
-        authMessage: action.error.response.data.error,
-      };
-
     case SIGNOUT:
       return {
         ...state,

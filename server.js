@@ -21,7 +21,7 @@ mongoose.connect(databaseConfig, {
 });
 
 //Checking the connection to db
-var db = mongoose.connection;
+const db = mongoose.connection;
 db.once("open", () => console.log("Mongo Database is connected now!"));
 db.on("error", console.error.bind(console, "connection error:"));
 

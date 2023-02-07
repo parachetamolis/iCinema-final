@@ -12,7 +12,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-// import MovieForm from './components/movieForm';
 
 import "./App.css";
 

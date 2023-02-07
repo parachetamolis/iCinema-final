@@ -2,5 +2,5 @@ projectKey=iCinema-test1
 serverUrl=http://localhost:9000
 serverVersion=9.8.0.63668
 dashboardUrl=http://localhost:9000/dashboard?id=iCinema-test1
-ceTaskId=AYYtLv85Iaey7Ex_WALw
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYYtLv85Iaey7Ex_WALw
+ceTaskId=AYYtwNpdIaey7Ex_WAL_
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYYtwNpdIaey7Ex_WAL_

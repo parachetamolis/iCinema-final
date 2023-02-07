@@ -4,7 +4,7 @@ import './style.css';
 const ListGroup = props => {
   let { onChange, active, options } = props;
   
-  options.sort();
+  options && options.sort();
   return ( 
     <div className="list-group">  
       <li key='all'className={CheckClass('All', active)} onClick={() => onChange('All')}> All
